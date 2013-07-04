@@ -1,0 +1,7 @@
+$(document).ready(function() {
+
+	$('#post-field').val('');
+	$('#posts').append('<%= j render(@post) %>');
+	$('.post').first().fadeOut(250, function() { $(this).remove(); });
+
+});
