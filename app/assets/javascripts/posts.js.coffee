@@ -11,7 +11,6 @@
 
 
 
-
   
 jQuery ->
   if $('#posts').length > 0

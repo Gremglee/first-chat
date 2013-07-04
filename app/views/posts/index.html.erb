@@ -12,7 +12,9 @@
 
     <%= f.input :user_id, as: 'hidden', input_html: { value: current_user.id } %>
     <%= f.input :text, :wrapper => :append,  :label => false do %>
-      <%= f.input_field :text, :id => 'post-field', :rows => 3, :cols => '10%', :class => 'inline' %>
+      <%= f.input_field :text, :id => 'post-field', :rows => 3, :cols => '10%', :class => 'inline', 
+                                                      :onkeyup=>"if (event.keyCode == 13) {handlerButton()}" %>
+
       <%= f.button :submit, :class => 'btn-primary' %>
     <% end %>
 
@@ -20,7 +22,14 @@
 
 
 
-
+<script type="text/javascript">
+  jQuery('#post-field').keypress(function(e) {
+    if (e.keyCode == 13 && !e.shiftKey) {
+      e.preventDefault();
+      $('.form-vertical').submit()
+    }
+  });
+</script>
 
 
 
