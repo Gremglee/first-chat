@@ -5,6 +5,8 @@ Chat::Application.routes.draw do
   devise_for :users
 
   root :to => 'posts#index'
+  get '/', to: 'posts#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
