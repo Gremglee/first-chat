@@ -1,1 +1,1 @@
-<p class='post'><%= post.created_at.strftime("%I:%M:%S") %> (<%= post.user.username %>) <%= post.text %></p>
+<p class='post'><%= post.created_at.localtime.strftime("%H:%M:%S") %> (<%= post.user.username %>): <%= post.text %></p>
